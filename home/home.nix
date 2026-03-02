@@ -1,6 +1,4 @@
 { pkgs, ... }: {
-  home.username = "ethan";
-  home.homeDirectory = "/home/ethan";
-
+  programs.niri.enable = true;
   home.stateVersion = "25.11";
 }
