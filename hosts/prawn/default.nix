@@ -11,6 +11,11 @@
 
   networking.hostName = "prawn";
   
+  users.users.ethan = {
+      isNormalUser = true;
+      extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
+  };
+
   services.tlp = {
     enable = true;
   };
