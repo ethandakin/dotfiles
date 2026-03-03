@@ -35,7 +35,6 @@
           home-manager.users.ethan = import ./home/home.nix;
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.sharedModules = [
-            inputs.nvf.homeManagerModules.nvf
             inputs.dms.homeModules.dank-material-shell
             inputs.dms.homeModules.niri
           ];
