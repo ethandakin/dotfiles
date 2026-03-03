@@ -9,7 +9,7 @@
 
   boot.plymouth = {
     enable = true;
-    themePackages = [ pkgs.nixos-plymouth-theme ];
+    themePackages = [ pkgs.nixos-bgrt-plymouth ];
     theme = "nixos-bgrt";
   };
 
