@@ -12,4 +12,4 @@
     enableAudioWavelength = true;
     enableClipboardPaste = true;
   };
-}
+} 
