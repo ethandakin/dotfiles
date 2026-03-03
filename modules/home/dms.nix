@@ -5,6 +5,7 @@
     niri = {
       enableSpawn = true;    # start with niri, fixes grey flash
       enableKeybinds = true;
+      includes.enable = true;
     };
 
     enableSystemMonitoring = true;
