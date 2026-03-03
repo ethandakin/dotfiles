@@ -28,6 +28,8 @@
       modules = [
         ./hosts/${host}
         inputs.niri.nixosModules.niri
+        # niri unstable
+        { nixpkgs.overlays = [ inputs.niri.overlays.niri ]; }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

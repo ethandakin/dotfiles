@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ../modules/home/niri.nix
     ../modules/home/dms.nix
   ];
 
