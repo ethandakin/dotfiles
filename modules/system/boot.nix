@@ -5,7 +5,7 @@
 
   boot.consoleLogLevel = 0;
   boot.kernelParams = [ "quiet" "splash" "udev.log_level=0" ];
-  systemd.extraConfig = "ShowStatus=no";
+  systemd.settings.Manager.ShowStatus = "no";
 
 
   boot.plymouth = {
