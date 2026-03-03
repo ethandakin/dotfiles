@@ -3,7 +3,6 @@
     ./hardware-configuration.nix
     ../../modules/system/audio.nix
     ../../modules/system/boot.nix
-    ../../modules/system/dms.nix
     ../../modules/system/locale.nix
     ../../modules/system/networking.nix
     ../../modules/system/niri.nix
