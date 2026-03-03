@@ -1,3 +1,7 @@
 { pkgs, ... }: {
-  home.stateVersion = "25.11";
+  imports = [
+    ../modules/home/dms.nix
+  ];
+
+  home.stateVersion = "26.05";
 }
