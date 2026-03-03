@@ -4,4 +4,6 @@
     enable = true;
     theme = "catppuccin-macchiato";
   };
+
+  services.libinput.enable = true;
 }
