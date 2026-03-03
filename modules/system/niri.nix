@@ -2,6 +2,12 @@
   programs.niri.enable = true;
   programs.niri.package = pkgs.niri-unstable;
 
+  programs.niri.settings = {
+    spawn-at-startup = [
+      { command = [ "wezterm" ]; }
+    ];
+  };
+
   services.greetd = {
     enable = true;
     settings.default_session = {
