@@ -2,7 +2,7 @@
   programs.niri.enable = true;
   programs.niri.package = pkgs.niri-unstable;
 
-  services.sddm = {
+  services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
   };
