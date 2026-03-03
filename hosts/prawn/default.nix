@@ -1,12 +1,13 @@
 { pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/system/audio.nix
+    ../../modules/system/nix.nix
     ../../modules/system/boot.nix
     ../../modules/system/locale.nix
+    ../../modules/system/audio.nix
     ../../modules/system/networking.nix
     ../../modules/system/niri.nix
-    ../../modules/system/nix.nix
+    ../../modules/system/fonts.nix
   ];
 
   networking.hostName = "prawn";
@@ -29,4 +30,6 @@
   services.fwupd.enable = true;
   services.libinput.enable = true;
   services.thermald.enable = true;  
+
+  system.stateVersion = "26.05";
 }

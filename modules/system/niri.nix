@@ -2,12 +2,9 @@
   programs.niri.enable = true;
   programs.niri.package = pkgs.niri-unstable;
 
-  services.greetd = {
+  services.sddm = {
     enable = true;
-    settings.default_session = {
-      command = "niri-session";
-      user = "ethan";
-    };
+    wayland.enable = true;
   };
 
   # avoid conflict with dms
