@@ -12,8 +12,12 @@
       restartIfChanged = true;   # Auto-restart dms.service when dank-material-shell changes
     };
 
+    settings = {
+      wallpaper = "${../../assets/wallpaper.png}";
+    };
+
     enableSystemMonitoring = true;
-    enableDynamicTheming = true;
+    enableDynamicTheming = false;
     enableAudioWavelength = true;
     enableClipboardPaste = true;
   };

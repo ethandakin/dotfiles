@@ -11,3 +11,4 @@ i would be nowhere without these awesome people
 * [NixOS Config Reborn](https://github.com/Andrey0189/nixos-config-reborn)
 * [General Purpose Nix Configuration](https://github.com/dustinlyons/nixos-config/tree/main)
 * [Frost-Phoenix's Flakes](https://github.com/Frost-Phoenix/nixos-config/tree/main)
+* [Wallpaper](https://files.orangc.net/public/walls-catppuccin-mocha)
