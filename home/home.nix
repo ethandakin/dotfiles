@@ -5,6 +5,7 @@
   ];
 
   programs.wezterm.enable = true;
+  programs.alacritty.enable = true;
 
   home.stateVersion = "26.05";
 }
