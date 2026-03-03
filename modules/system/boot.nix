@@ -5,12 +5,12 @@
 
   boot.consoleLogLevel = 0;
   boot.kernelParams = [ "quiet" "splash" "udev.log_level=0" ];
+  systemd.extraConfig = "ShowStatus=no";
 
 
   boot.plymouth = {
     enable = true;
-    themePackages = [ pkgs.nixos-bgrt-plymouth ];
-    theme = "nixos-bgrt";
+    theme = "bgrt";
   };
 
   boot.initrd.systemd.enable = true;  
