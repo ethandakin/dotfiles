@@ -18,6 +18,11 @@
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+   silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+   };
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }:
@@ -28,6 +33,7 @@
       modules = [
         ./hosts/${host}
         inputs.niri.nixosModules.niri
+        inputs.silentSDDM.nixosModules.default
         # niri unstable
         { nixpkgs.overlays = [ inputs.niri.overlays.niri ]; }
         home-manager.nixosModules.home-manager

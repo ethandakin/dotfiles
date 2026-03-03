@@ -7,7 +7,6 @@
   boot.kernelParams = [ "quiet" "splash" "udev.log_level=0" ];
   systemd.settings.Manager.ShowStatus = "no";
 
-
   boot.plymouth = {
     enable = true;
     theme = "bgrt";

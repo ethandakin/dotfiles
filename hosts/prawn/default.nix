@@ -6,6 +6,7 @@
     ../../modules/system/locale.nix
     ../../modules/system/audio.nix
     ../../modules/system/networking.nix
+    ../../modules/system/sddm.nix
     ../../modules/system/niri.nix
     ../../modules/system/fonts.nix
   ];
