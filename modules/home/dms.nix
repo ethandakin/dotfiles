@@ -11,7 +11,7 @@
       enable = true;             # Systemd service for auto-start
       restartIfChanged = true;   # Auto-restart dms.service when dank-material-shell changes
     };
-
+  
     session = {
       wallpaperPath = "${../../assets/wallpaper.png}";
     };
