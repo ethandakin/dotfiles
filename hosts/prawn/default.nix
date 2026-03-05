@@ -28,9 +28,6 @@
     enable32Bit = true;
   };
 
-  services.tuned.enable = true;
-  services.upower.enable = true;
-
   services.fwupd.enable = true;
   services.libinput.enable = true;
   services.thermald.enable = true;  

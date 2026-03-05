@@ -14,14 +14,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.noctalia-qs.follows = "noctalia-qs";
-    };
-
-    noctalia-qs = {
-      url = "github:noctalia-dev/noctalia-qs";
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -48,7 +42,10 @@
           home-manager.useUserPackages = true;
           home-manager.users.ethan = import ./home/home.nix;
           home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.sharedModules = [];
+          home-manager.sharedModules = [
+            inputs.dms.homeModules.dank-material-shell
+            inputs.dms.homeModules.niri
+          ];
         }
       ];
     };
