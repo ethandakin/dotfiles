@@ -28,8 +28,8 @@
     enable32Bit = true;
   };
 
-  services.tuned.enable;
-  services.upower.enable;
+  services.tuned.enable = true;
+  services.upower.enable = true;
 
   services.fwupd.enable = true;
   services.libinput.enable = true;
