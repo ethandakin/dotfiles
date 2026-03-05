@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ../modules/home/niri.nix
-    ../modules/home/dms.nix
+    ../modules/home/noctalia.nix
   ];
 
   home.packages = with pkgs; [
