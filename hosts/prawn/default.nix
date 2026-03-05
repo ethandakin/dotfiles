@@ -29,7 +29,7 @@
   };
 
   services.tuned.enable;
-  services.upower.enable
+  services.upower.enable;
 
   services.fwupd.enable = true;
   services.libinput.enable = true;
