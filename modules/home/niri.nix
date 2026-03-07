@@ -3,7 +3,7 @@
     hotkey-overlay.skip-at-startup = false;
 
     binds = with config.lib.niri.actions; {
-      "Mod+Shift+Slash".action = {show-hotkey-overlay = true};
+      "Mod+Shift+Slash".action = show-hotkey-overlay;
 
       "Mod+T".action.spawn = "wezterm";
       "Mod+T".hotkey-overlay.title = "Open a Terminal: wezterm";
