@@ -14,15 +14,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-   silentSDDM = {
+    silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
-   };
+    };
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }:
@@ -34,7 +29,6 @@
         ./hosts/${host}
         inputs.niri.nixosModules.niri
         inputs.silentSDDM.nixosModules.default
-        # niri unstable
         { nixpkgs.overlays = [ inputs.niri.overlays.niri ]; }
         home-manager.nixosModules.home-manager
         {
@@ -42,10 +36,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.ethan = import ./home/home.nix;
           home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.sharedModules = [
-            inputs.dms.homeModules.dank-material-shell
-            inputs.dms.homeModules.niri
-          ];
+          home-manager.sharedModules = [];
         }
       ];
     };
