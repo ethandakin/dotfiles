@@ -2,6 +2,10 @@
   programs.niri.settings = {
     hotkey-overlay.skip-at-startup = false;
 
+    spawn-at-startup = [
+      { command = [ "noctalia-shell" ]; }
+    ];
+
     binds = with config.lib.niri.actions; {
       "Mod+Shift+Slash".action = show-hotkey-overlay;
 

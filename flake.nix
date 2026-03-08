@@ -19,10 +19,20 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    quickshell = {
-      url = "github:quickshell-mirror/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";z
     };
+
+    noctalia-qs = {
+      url = "github:noctalia-dev/noctalia-qs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };   
+
+    vscode-server = {
+      url = "github:nix-community/nixos-vscode-server";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };    
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }:
@@ -34,6 +44,7 @@
         ./hosts/${host}
         inputs.niri.nixosModules.niri
         inputs.silentSDDM.nixosModules.default
+        inputs.vscode-server.nixosModules.default
         { nixpkgs.overlays = [ inputs.niri.overlays.niri ]; }
         home-manager.nixosModules.home-manager
         {
