@@ -19,9 +19,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";z
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     noctalia-qs = {
@@ -43,6 +48,7 @@
       modules = [
         ./hosts/${host}
         inputs.niri.nixosModules.niri
+        inputs.stylix.nixosModules.stylix
         inputs.silentSDDM.nixosModules.default
         inputs.vscode-server.nixosModules.default
         { nixpkgs.overlays = [ inputs.niri.overlays.niri ]; }

@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, inputs, ... }: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/system/nix.nix
@@ -8,6 +8,7 @@
     ../../modules/system/networking.nix
     ../../modules/system/sddm.nix
     ../../modules/system/niri.nix
+    ../../modules/system/stylix.nix
     ../../modules/system/fonts.nix
   ];
 
