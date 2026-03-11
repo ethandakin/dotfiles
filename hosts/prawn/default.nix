@@ -34,6 +34,8 @@
     settings.PasswordAuthentication = true;
   };
 
+  services.gnome.gcr-ssh-agent.enable = false;
+
   services.fwupd.enable = true;
   services.libinput.enable = true;
   services.thermald.enable = true;

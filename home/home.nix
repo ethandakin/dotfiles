@@ -1,6 +1,6 @@
 { pkgs, inputs, config, ... }: {
   imports = [
-    ../modules/home/niri.nix
+    ../modules/home/niri
     inputs.noctalia.homeModules.default
   ];
 
@@ -12,8 +12,21 @@
 
   programs.wezterm = {
     enable = true;
+    extraConfig = '' 
+      local wezterm = require("wezterm")
+      local config = wezterm.config_builder()
+
+      config.mux_enable_ssh_agent = false
+
+      return config
+    '';
   };
-  programs.firefox.enable = true;
+
+  programs.firefox = {
+    package = pkgs.firefox-devedition;
+    enable = true;
+  };
+
   stylix.targets.firefox.enable = false;
   programs.vscode.enable = true;
 
@@ -48,9 +61,10 @@
     };
   };
 
-  home.sessionVariables = {
+
+  programs.niri.settings.environment = {
     SSH_AUTH_SOCK = "/home/${config.home.username}/.bitwarden-ssh-agent.sock";
-  };  
+  };
 
   home.stateVersion = "26.05";
 }
