@@ -1,5 +1,5 @@
 environment {
-    SSH_AUTH_SOCK "~/.bitwarden-ssh-agent.sock"
+    SSH_AUTH_SOCK "/home/ethan/.bitwarden-ssh-agent.sock"
 }
 
 input {
@@ -28,6 +28,17 @@ layout {
         proportion 0.5
         proportion 0.66667
     }
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 2
+    }
+
+
 }
 
 spawn-sh-at-startup "noctalia-shell"
@@ -40,7 +51,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 window-rule {
     match app-id="wezterm"
-    default-column-width {}
+    default-window-height { proportion 1.0; }
 }
 
 window-rule {

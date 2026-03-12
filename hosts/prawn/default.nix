@@ -8,7 +8,6 @@
     ../../modules/system/networking.nix
     ../../modules/system/sddm.nix
     ../../modules/system/niri.nix
-    ../../modules/system/stylix.nix
     ../../modules/system/fonts.nix
   ];
 
@@ -43,6 +42,5 @@
   services.upower.enable = true;
 
   services.vscode-server.enable = true;
-
   system.stateVersion = "26.05";
 }
