@@ -17,6 +17,10 @@
       isNormalUser = true;
       extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
   };
+
+  environment.systemPackages = [
+    inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
+  ]; 
   
   hardware.bluetooth = {
     enable = true;

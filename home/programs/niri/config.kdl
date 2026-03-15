@@ -1,3 +1,9 @@
+environment {
+    SSH_AUTH_SOCK "/home/ethan/.bitwarden-ssh-agent.sock"
+}
+
+prefer-no-csd
+
 input {
     keyboard {
         numlock
@@ -26,11 +32,6 @@ layout {
     }
 
     focus-ring {
-        off
-    }
-
-    border {
-        on
         width 2
     }
 
@@ -46,6 +47,11 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 window-rule {
     match app-id="wezterm"
     default-window-height { proportion 1.0; }
+    opacity 0.85
+    background-effect {
+        blur true
+        xray false
+    }
 }
 
 window-rule {

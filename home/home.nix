@@ -37,5 +37,7 @@
     color-scheme = "prefer-dark";
   };
 
+  programs.waybar.enable = true;
+
   home.stateVersion = "26.05";
 }
