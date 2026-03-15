@@ -10,7 +10,7 @@
     };
 
     niri = {
-      url = "github:sodiboo/niri-flake";
+      url = "github:niri-wm/niri/wip/branch";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -18,16 +18,6 @@
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    noctalia-qs = {
-      url = "github:noctalia-dev/noctalia-qs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };   
 
     vscode-server = {
       url = "github:nix-community/nixos-vscode-server";
@@ -42,10 +32,8 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/prawn
-          inputs.niri.nixosModules.niri
           inputs.silentSDDM.nixosModules.default
           inputs.vscode-server.nixosModules.default
-          { nixpkgs.overlays = [ inputs.niri.overlays.niri ]; }
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
