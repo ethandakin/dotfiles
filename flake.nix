@@ -14,10 +14,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri = {
+    vicinae.url = "github:vicinaehq/vicinae";
+    niri.url = "github:sodiboo/niri-flake";
+
+    niri-blur = {
       url = "github:niri-wm/niri/wip/branch";
-      inputs.nixpkgs.follows = "nixpkgs";
+      flake = false;
     };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.noctalia-qs.follows = "noctalia-qs";
+    };
+
+    noctalia-qs = {
+      url = "github:noctalia-dev/noctalia-qs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };  
 
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
@@ -45,7 +59,10 @@
             home-manager.useUserPackages = true;
             home-manager.users.ethan = import ./home/home.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.sharedModules = [];
+            home-manager.sharedModules = [
+              inputs.niri.homeModules.niri
+              inputs.vicinae.homeManagerModules.default
+            ];
           }
         ];
       };

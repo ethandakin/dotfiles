@@ -20,6 +20,8 @@
 
   environment.systemPackages = [
     inputs.awww.packages.${pkgs.stdenv.hostPlatform.system}.awww
+    pkgs.brightnessctl
+    pkgs.kdePackages.layer-shell-qt
   ]; 
   
   hardware.bluetooth = {

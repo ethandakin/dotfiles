@@ -1,6 +1,12 @@
 environment {
+    GDK_BACKEND "wayland"
+    QT_QPA_PLATFORM "wayland"
+    NIXOS_OZONE_WL "1"
     SSH_AUTH_SOCK "/home/ethan/.bitwarden-ssh-agent.sock"
 }
+
+spawn-at-startup "awww-daemon"
+spawn-at-startup "noctalia-shell"
 
 prefer-no-csd
 
@@ -34,8 +40,6 @@ layout {
     focus-ring {
         width 2
     }
-
-
 }
 
 hotkey-overlay {
@@ -54,6 +58,16 @@ window-rule {
     }
 }
 
+layer-rule {
+    match namespace="vicinae"
+    background-effect {
+        blur true
+        xray false
+    }
+    opacity 0.85
+}
+
+
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
@@ -65,7 +79,10 @@ window-rule {
 }
 
 binds {
+    Mod+Shift+D { spawn "wezterm" "start" "--" "sh" "-c" "niri msg layers | less"; }
+
     Mod+Shift+Slash { show-hotkey-overlay; }
+    Mod+Space { spawn-sh "vicinae toggle"; }
 
     Mod+T hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
@@ -220,3 +237,6 @@ binds {
 
     Mod+Shift+P { power-off-monitors; }
 }
+
+include "./noctalia.kdl"
+

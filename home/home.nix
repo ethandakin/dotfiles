@@ -4,18 +4,26 @@
     ./programs/firefox
     ./programs/git
     ./programs/ssh
+    ./programs/vicinae
+    ./programs/noctalia
   ];
 
   home.packages = with pkgs; [
     nil
     nixfmt
     bitwarden-desktop
+    kdePackages.qt6ct
+    gtk3
+    gtk4
   ];
 
   programs.alacritty.enable = true;
   programs.wezterm.enable = true;
   programs.vscode.enable = true;
   programs.fuzzel.enable = true;
+  programs.fastfetch.enable = true;
+
+  services.tailscale-systray.enable = true;
 
   gtk = {
     enable = true;
@@ -29,15 +37,13 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
+    platformTheme.name = "gtk4";
     style.name = "adwaita-dark";
   };
 
   dconf.settings."org/gnome/desktop/interface" = {
     color-scheme = "prefer-dark";
   };
-
-  programs.waybar.enable = true;
 
   home.stateVersion = "26.05";
 }
