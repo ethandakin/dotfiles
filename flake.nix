@@ -9,34 +9,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    awww = {
-      url = "git+https://codeberg.org/LGFae/awww";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    vicinae.url = "github:vicinaehq/vicinae";
     niri.url = "github:sodiboo/niri-flake";
 
-    niri-blur = {
-      url = "github:niri-wm/niri/wip/branch";
-      flake = false;
-    };
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.noctalia-qs.follows = "noctalia-qs";
-    };
-
-    noctalia-qs = {
-      url = "github:noctalia-dev/noctalia-qs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };  
-
-    silentSDDM = {
-      url = "github:uiriansan/SilentSDDM";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    vicinae.url = "github:vicinaehq/vicinae";
 
     vscode-server = {
       url = "github:nix-community/nixos-vscode-server";
@@ -51,8 +26,8 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/prawn
-          inputs.silentSDDM.nixosModules.default
           inputs.vscode-server.nixosModules.default
+          inputs.niri.nixosModules.niri
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -60,7 +35,6 @@
             home-manager.users.ethan = import ./home/home.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.sharedModules = [
-              inputs.niri.homeModules.niri
               inputs.vicinae.homeManagerModules.default
             ];
           }
