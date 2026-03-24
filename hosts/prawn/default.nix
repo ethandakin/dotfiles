@@ -23,7 +23,6 @@
     fuzzel
     fastfetch
     git
-    ssh
   ];
   
   hardware.graphics = {
