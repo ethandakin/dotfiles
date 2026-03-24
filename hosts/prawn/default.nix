@@ -1,21 +1,30 @@
 { pkgs, lib, inputs, ... }: {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nix.nix
-    ../../modules/boot.nix
-    ../../modules/locale.nix
     ../../modules/audio.nix
-    ../../modules/networking.nix
+    ../../modules/boot.nix
     ../../modules/fonts.nix
-    ../../modules/desktop.nix
+    ../../modules/hjem.nix
+    ../../modules/locale.nix
+    ../../modules/networking.nix
+    ../../modules/nix.nix
+    ../../modules/user.nix
   ];
 
   networking.hostName = "prawn";
-  
-  users.users.ethan = {
-      isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" "video" "audio" ];
-  };
+
+  environment.systemPackages = with pkgs; [
+    swaybg
+    alacritty
+    wezterm
+    niri
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    xwayland-satellite
+    fuzzel
+    fastfetch
+    git
+    ssh
+  ];
   
   hardware.graphics = {
     enable = true;
@@ -27,6 +36,5 @@
     settings.PasswordAuthentication = true;
   };
 
-  services.vscode-server.enable = true;
   system.stateVersion = "26.05";
 }
