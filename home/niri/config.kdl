@@ -71,6 +71,9 @@ debug {
   honor-xdg-activation-with-invalid-serial
 }
 
+spawn-at-startup "swaybg" "-c" "#000000"
+spawn-at-startup "noctalia-shell"
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
