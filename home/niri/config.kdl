@@ -53,8 +53,22 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 12
-    clip-to-geometry true
+  // Rounded corners for a modern look.
+  geometry-corner-radius 20
+
+  // Clips window contents to the rounded corner boundaries.
+  clip-to-geometry true
+}
+
+// Set the overview wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
+}
+
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
 }
 
 binds {
@@ -63,16 +77,17 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
-    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-    XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
-    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
-    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    // noctalia binds :)
+    XF86AudioRaiseVolume allow-when-locked=true  { spawn-sh "noctalia-shell ipc call volume increase"; }
+    XF86AudioLowerVolume allow-when-locked=true  { spawn-sh "noctalia-shell ipc call volume decrease"; }
+    XF86AudioMute        allow-when-locked=true  { spawn-sh "noctalia-shell ipc call volume muteOutput"; }
+    XF86AudioMicMute     allow-when-locked=true  { spawn-sh "noctalia-shell ipc call volume muteInput"; }
+    XF86AudioPlay        allow-when-locked=true  { spawn-sh "noctalia-shell ipc call media playPause"; }
+    XF86AudioStop        allow-when-locked=true  { spawn-sh "noctalia-shell ipc call media stop"; }
+    XF86AudioPrev        allow-when-locked=true  { spawn-sh "noctalia-shell ipc call previous"; }
+    XF86AudioNext        allow-when-locked=true  { spawn-sh "noctalia-shell ipc call next"; }
+    XF86MonBrightnessUp allow-when-locked=true   { spawn-sh "noctalia-shell ipc call brightness increase"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "noctalia-shell ipc call brightness decrease"; }
 
     Mod+O repeat=false { toggle-overview; }
     Mod+Q repeat=false { close-window; }
