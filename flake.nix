@@ -19,6 +19,13 @@
       url = "github:noctalia-dev/noctalia-qs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    niri.url = github:sodiboo/niri-flake;
+
+    vscode-server = {
+      url = "github:nix-community/nixos-vscode-server";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };    
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
@@ -29,6 +36,8 @@
         modules = [
           ./hosts/prawn
           inputs.hjem.nixosModules.default
+          inputs.niri.nixosModules.niri
+          inputs.vscode-server.nixosModules.default
         ];
       };
     };

@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ../../modules/audio.nix
     ../../modules/boot.nix
+    ../../modules/desktop.nix
     ../../modules/fonts.nix
     ../../modules/hjem.nix
     ../../modules/locale.nix
@@ -17,9 +18,7 @@
     swaybg
     alacritty
     wezterm
-    niri
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-    xwayland-satellite
     fuzzel
     fastfetch
     git
@@ -34,6 +33,7 @@
     enable = true;
     settings.PasswordAuthentication = true;
   };
+  services.vscode-server.enable = true;
 
   system.stateVersion = "26.05";
 }
