@@ -1,5 +1,3 @@
-include "noctalia.kdl" 
-
 environment {
     SSH_AUTH_SOCK "/home/ethan/.bitwarden-ssh-agent.sock"    
 }
@@ -14,6 +12,15 @@ input {
         natural-scroll
         middle-emulation
     }
+}
+
+output "DP-4" {
+    mode "3440x1440@144.001"
+}
+
+cursor {
+    xcursor-size 16
+    xcursor-theme "Hackneyed"
 }
 
 gestures {

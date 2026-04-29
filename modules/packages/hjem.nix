@@ -1,15 +1,14 @@
 { self, inputs, ... }: {
   flake.nixosModules.hjem = { pkgs, ... }: {
+    # probably should do this better but i dont rlly care right now
     hjem.users.ethan = {
       directory = "/home/ethan";
       files = {
+        ".ssh/allowed_signers".source = ../../home/ssh/allowed_signers;
+        ".gitconfig".source = ../../home/gitconfig;
+
         ".config/niri/config.kdl".source = ../../home/niri/config.kdl;
         # copies instead of symlinks
-        ".config/niri/noctalia.kdl" = {
-          source = ../../home/niri/noctalia.kdl;
-          type = "copy";
-          permissions = "644";
-        };
         ".config/noctalia/colors.json" = {
           source = ../../home/noctalia/colors.json;
           type = "copy";

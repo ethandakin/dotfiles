@@ -7,11 +7,13 @@
       self.nixosModules.common
       self.nixosModules.desktop
       self.nixosModules.firefox
+      self.nixosModules.games
       self.nixosModules.fonts
       self.nixosModules.hjem
       self.nixosModules.locale
       self.nixosModules.networking
       self.nixosModules.nix
+      self.nixosModules.nvidia
       self.nixosModules.user
     ];
 

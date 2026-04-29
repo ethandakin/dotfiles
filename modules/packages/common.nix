@@ -11,13 +11,17 @@
       git
       helix
       gtk4
+
+      nixd
+      nixfmt
     ];
 
     # maybe export my user or smthn
     users.users.ethan.packages = with pkgs; [
       vscodium
       bitwarden-desktop
+      hackneyed
+      vesktop
     ];
   };
 }
-
