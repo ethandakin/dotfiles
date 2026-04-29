@@ -1,36 +1,35 @@
-// default colours or smn (gets overriden)
-
 layout {
+
     focus-ring {
-        active-color   "#b1c5ff"
-        inactive-color "#121316"
-        urgent-color   "#ffb4ab"
+        active-color   "#7aa2f7"
+        inactive-color "#1a1b26"
+        urgent-color   "#f7768e"
     }
 
     border {
-        active-color   "#b1c5ff"
-        inactive-color "#121316"
-        urgent-color   "#ffb4ab"
+        active-color   "#7aa2f7"
+        inactive-color "#1a1b26"
+        urgent-color   "#f7768e"
     }
 
     shadow {
-        color "#00000070"
+        color "#15161e70"
     }
 
     tab-indicator {
-        active-color   "#b1c5ff"
-        inactive-color "#1c438f"
-        urgent-color   "#ffb4ab"
+        active-color   "#7aa2f7"
+        inactive-color "#003dbe"
+        urgent-color   "#f7768e"
     }
 
     insert-hint {
-        color "#b1c5ff80"
+        color "#7aa2f780"
     }
 }
 
 recent-windows {
     highlight {
-        active-color "#b1c5ff"
-        urgent-color "#ffb4ab"
+        active-color "#7aa2f7"
+        urgent-color "#f7768e"
     }
 }

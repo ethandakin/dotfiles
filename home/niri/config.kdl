@@ -1,9 +1,24 @@
 include "noctalia.kdl" 
 
+environment {
+    SSH_AUTH_SOCK "/home/ethan/.bitwarden-ssh-agent.sock"    
+}
+
 input {
+    keyboard {
+        numlock
+    }
+
     touchpad {
         tap
         natural-scroll
+        middle-emulation
+    }
+}
+
+gestures {
+    hot-corners {
+        off
     }
 }
 
