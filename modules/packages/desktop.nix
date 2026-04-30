@@ -49,22 +49,17 @@
         pkgs.gtk3
         pkgs.gtk4
         pkgs.xwayland-satellite
+        pkgs.xdg-desktop-portal-gtk
+        pkgs.xdg-desktop-portal-gnome
       ];
 
       xdg.portal = {
         enable = true;
         extraPortals = [
-          pkgs.xdg-desktop-portal-wlr
+          pkgs.xdg-desktop-portal-gnome
           pkgs.xdg-desktop-portal-gtk
-          # Remove xdg-desktop-portal-gnome entirely
         ];
-        config = {
-          niri = {
-            default = [ "wlr" "gtk" ];
-            "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
-            "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
-          };
-        };
+        configPackages = [ pkgs.niri ];
       };
 
       services.gvfs.enable = true;
